@@ -1,0 +1,6 @@
+.nova/
+.DS_Store
+node_modules/
+.wrangler/
+.session.vim
+.dev.vars

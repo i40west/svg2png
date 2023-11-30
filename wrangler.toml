@@ -1,0 +1,9 @@
+name = "svg2png"
+main = "src/index.js"
+compatibility_date = "2022-06-13"
+account_id = "c4181c74ba33fc8edf2d8cca0dc37bd1"
+usage_model = "unbound"
+workers_dev = false
+
+[env.dev]
+name = "svg2png-dev"
