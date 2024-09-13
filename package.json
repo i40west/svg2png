@@ -1,10 +1,10 @@
 {
   "name": "svg2png",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "type": "module",
   "devDependencies": {
-    "wrangler": "^3.17.1"
+    "wrangler": "^3.77.0"
   },
   "scripts": {
     "start": "wrangler dev",
@@ -12,7 +12,7 @@
     "deploy-dev": "wrangler deploy --env dev"
   },
   "dependencies": {
-    "hono": "^3.10.3",
+    "hono": "^4.6.1",
     "svg2png-wasm": "^1.4.1"
   }
 }
