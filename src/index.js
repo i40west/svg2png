@@ -13,8 +13,15 @@ app.get('/circle', async () => {
     return new Response(buf, { headers: { 'content-type': 'image/png' } });
 });
 
-app.all('/', () => {
-	return new Response("I'm a teapot.", { status: 418 });
+// The old api, deprecated, don't use except for backwards compatibility
+app.post('/', async (c) => {
+    const contentType = c.req.header('content-type') || '';
+    if (!contentType.includes('image/svg+xml')) {
+        return c.text('bad request content-type', 400);
+    }
+    const svg = await c.req.text();
+    const buf = await svg2png(svg, {});
+    return new Response(buf, { headers: { 'content-type': 'image/png' } });
 });
 
 // Take a POST request with svg in the 'svg' field and optional svg2png-wasm params
